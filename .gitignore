@@ -16,4 +16,4 @@ ingest_data_full_metrics.py
 data.py
 hvbta/io/*
 *.prof
-unused/*
+unused/*venv/
