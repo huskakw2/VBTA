@@ -15,6 +15,24 @@ def _sample(items: List[str], k_min: int = 0, k_max: int = None) -> List[str]:
 # STRICT ROBOT PROFILES FOR ROBOT GENERATION
 STRICT_ROBOT_PROFILES = [
     {
+        "name": "misty_communication",
+        "mobility_type": "wheeled",
+        "environmental_resistance": [],
+        "sensors": ["camera", "microphone"],
+        "manipulators": [],
+        "communication_protocols": ["Wi-Fi"],
+        "special_functions": ["speech", "human interaction", "status reporting"],
+        "safety_features": ["obstacle detection", "emergency stop"],
+        "sensor_range": 5.0,
+        "processing_power": 4.0,
+        "autonomy_level": "semi-autonomous",
+        "payload_capacity": 0.0,
+        "reach": 0.0,
+        "battery_life": 60.0,
+        "size": (0.5, 0.5, 1.0),
+        "adaptability": True
+    },
+    {
         "name": "delivery",
         "mobility_type": "aerial",
         "environmental_resistance": ["weatherproof", "heat-resistant", "cold-resistant"],
@@ -126,6 +144,21 @@ STRICT_ROBOT_PROFILES = [
 
 # STRICT TASK PROFILES FOR TASK GENERATION
 STRICT_TASK_PROFILES = [
+    {
+    	"task_type": "assistance",
+    	"priority_level": "medium",
+    	"reward": 5,
+    	"difficulty": 2,
+    	"navigation_constraints": [],
+    	"required_capabilities": [],
+    	"environmental_conditions": [],
+    	"tools_needed": [["camera", "microphone"], ["speech"]],
+        "communication_requirements": ["Wi-Fi"],
+        "safety_protocols": ["obstacle detection", "emergency stop"],
+        "duration": 3,
+        "performance_metric": "completion rate",
+        "nl_description": "Navigate to a checkpoint and verbally report status or instructions to a human/operator."
+    },
     {
         "task_type": "utilities", #gripper
         "priority_level": random.choice(["medium", "high"]),
